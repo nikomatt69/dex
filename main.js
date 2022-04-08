@@ -97,7 +97,7 @@ async function getQuote() {
 async function trySwap() {
   let address = Moralis.User.current().get("ethAddress");
   let amount = Number(document.getElementById("from_amount").value * 10 ** currentTrade.from.decimals);
-  if (currentTrade.from.symbol !== "ETH") {
+  if (currentTrade.from.symbol !== "MATIC") {
     const allowance = await Moralis.Plugins.oneInch.hasAllowance({
       chain: "polygon", // The blockchain you want to use (eth/bsc/polygon)
       fromTokenAddress: currentTrade.from.address, // The token you want to swap
